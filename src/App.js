@@ -30,15 +30,16 @@ componentDidMount = () => {
 
 changeValue = (user_id) => () => {
   console.log(user_id);
-  const changrdUser = this.state.users.map(user => {
+ /* const changrdUser = this.state.users.map(user => {
     if (user.index === user_id) {
       user.interviewed = !user.interviewed;
     }
     return user;
-  });
+  });*/
+  const { int } = this.interviewed;
 
   this.setState({
-    interviewed: changrdUser
+    interviewed: !int
   });
 }
 
@@ -60,9 +61,10 @@ render() {
               <>
               <ListUsers
                 key={key}
-                user={user}                
+                user={user} 
+                interviewed={changeValue}               
               />
-              <Button interviewed={changeValue}/>
+              <Button onClick={changeValue}/>
               </>
               )        
           )

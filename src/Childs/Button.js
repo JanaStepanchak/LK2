@@ -1,11 +1,12 @@
 import React  from 'react'
 
-    const Button = ({interviewed}) => {
+    const Button = ({children}) => {
 
-      //  console.log("Button",interviewed);
+      //  console.log("Button", children);
 
     return(
-            <button onClick={console.log("123")}>
+            <button onClick={children}>
+                Interviewed
             </button>
     )
 }
